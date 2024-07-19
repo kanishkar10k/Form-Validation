@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style_1.css">
+</head>
+<body>
+    <div class="box">
+        <h1>Details</h1>
+        <form name="vform" method="post" onsubmit="return validate()" action="message.html">
+            <label>Frist Name</label><br>
+            <input type="text" name="fname" id="fname" placeholder="Frist Name"><br>
+            <label>Last Name</label><br>
+            <input type="text" name="lname" id="lname" placeholder="Last Name"><br>
+            <label>City</label><br>
+            <input type="text" name="city" id="city" placeholder="City"><br>
+            <label>Phone No.</label><br>
+            <input type="number" name="phone" id="phone" placeholder="Phone No."><br>
+            <label>Address</label><br>
+            <textarea name="address" id="address"></textarea><br>
+            <button type="submit" id="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        function validate() {
+            let fname = document.getElementById('fname').value;
+            let lname= document.getElementById('lname').value;
+            let city= document.getElementById('city').value;
+            let phone= document.getElementById('phone').value;
+            let address= document.getElementById('address').value;
+
+            if (fname === "" && lname === "" && city === "" && phone === "" && address === "") {
+                alert("Please enter all the required details");
+                return false;
+            } else if (fname==="" || fname===null) {
+                alert("Frist Name Should not be blank");
+                return false;}
+            else if (lname==="" || lname===null) {
+                alert("Last Name Should not be blank");
+                return false;
+            }
+            else if (city==="" || city===null) {
+                alert("City Should not be blank");
+                return false;
+            }
+            else if (phone===NaN || phone===null|| phone.length!==10) {
+                alert("Please enter a Valid phone number");
+                return false;
+            }
+            else if (address==="" || address===null) {
+                alert("Address Should not be blank");
+                return false;
+            }else {
+                alert("Form Submitted");
+                return true;
+            }
+        }
+
+         </script>
+</body>
+</html>
